@@ -22,7 +22,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_inicio"
             android:theme="@style/FullscreenTheme" />
-        <activity android:name=".DetallePuertaActivity" />
+        <activity android:name=".DetallePortonCuatroTablerosActivity" />
         <activity android:name=".MasOpcionesDisenosActivity"></activity>
     </application>
 
