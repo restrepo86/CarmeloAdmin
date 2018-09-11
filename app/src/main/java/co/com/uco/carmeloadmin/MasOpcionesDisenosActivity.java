@@ -17,4 +17,9 @@ public class MasOpcionesDisenosActivity extends AppCompatActivity {
         Intent intentDetallePortonCuatroTableros = new Intent(MasOpcionesDisenosActivity.this, DetallePortonCuatroTablerosActivity.class);
         startActivity(intentDetallePortonCuatroTableros);
     }
+
+    public void ingresarDetallePortonTresTableros(View view) {
+        Intent ingresarDetalleBotonTresTablerosIntent = new Intent(MasOpcionesDisenosActivity.this, DetallePortonTresTablerosActivity.class);
+        startActivity(ingresarDetalleBotonTresTablerosIntent);
+    }
 }

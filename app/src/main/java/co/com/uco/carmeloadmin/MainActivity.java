@@ -14,8 +14,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void verMasOpcionesOnClick(View view) {
-        Intent intent = new Intent(MainActivity.this, MasOpcionesDisenosActivity.class);
-        startActivity(intent);
+        Intent verMasOpcionesDisenosIntent = new Intent(MainActivity.this, MasOpcionesDisenosActivity.class);
+        startActivity(verMasOpcionesDisenosIntent);
     }
 
+    public void ingresarDetallePortonDobleTablero(View view) {
+        Intent ingresarDetallePortonDobleTableroIntent = new Intent(MainActivity.this, DetallePortonDosTablerosActivity.class);
+        startActivity(ingresarDetallePortonDobleTableroIntent);
+    }
+
+    public void ingresarDetallePortonSeisTableros(View view) {
+        Intent ingresarDetalleBotonSeisTablerosIntent = new Intent(MainActivity.this, DetallePortonSeisTablerosActivity.class);
+        startActivity(ingresarDetalleBotonSeisTablerosIntent);
+    }
 }

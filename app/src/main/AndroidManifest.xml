@@ -23,7 +23,10 @@
             android:label="@string/title_activity_inicio"
             android:theme="@style/FullscreenTheme" />
         <activity android:name=".DetallePortonCuatroTablerosActivity" />
-        <activity android:name=".MasOpcionesDisenosActivity"></activity>
+        <activity android:name=".MasOpcionesDisenosActivity" />
+        <activity android:name=".DetallePortonDosTablerosActivity" />
+        <activity android:name=".DetallePortonSeisTablerosActivity" />
+        <activity android:name=".DetallePortonTresTablerosActivity"></activity>
     </application>
 
 </manifest>

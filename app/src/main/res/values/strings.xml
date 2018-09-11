@@ -5,4 +5,9 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="ver_mas">Ver Mas</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="grueso">Grueso</string>
+    <string name="alto">Alto</string>
+    <string name="ancho">Ancho</string>
+    <string name="generar_despiece">Generar Despiece</string>
 </resources>
