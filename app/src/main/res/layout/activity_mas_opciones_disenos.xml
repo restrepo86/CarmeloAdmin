@@ -4,17 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="co.com.uco.carmeloadmin.MainActivity">
+    tools:context="co.com.uco.carmeloadmin.MasOpcionesDisenosActivity">
 
     <TableLayout
-        android:id="@+id/tableLayout"
         android:layout_width="368dp"
         android:layout_height="495dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -40,48 +38,35 @@
     </TableLayout>
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/imageButton"
         android:layout_width="wrap_content"
-        android:layout_height="264dp"
+        android:layout_height="291dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.281"
-        app:srcCompat="@drawable/puerta_cuatro" />
+        app:layout_constraintVertical_bias="0.705"
+        app:srcCompat="@drawable/puerta_tres" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/imageButton6"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.281"
-        app:srcCompat="@drawable/puerta_dos" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="291dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/ver_mas"
-        android:onClick="verMasOpcionesOnClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintHorizontal_bias="0.72"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.874" />
+        app:layout_constraintVertical_bias="0.269"
+        app:srcCompat="@drawable/puerta_uno" />
+
 </android.support.constraint.ConstraintLayout>
