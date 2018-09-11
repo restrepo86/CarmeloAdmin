@@ -38,7 +38,7 @@
     </TableLayout>
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/portonCuatroTablerosButton"
         android:layout_width="wrap_content"
         android:layout_height="291dp"
         android:layout_marginBottom="8dp"
@@ -54,7 +54,7 @@
         app:srcCompat="@drawable/puerta_tres" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/portonTresTablerosButton"
         android:layout_width="wrap_content"
         android:layout_height="291dp"
         android:layout_marginBottom="8dp"
@@ -64,9 +64,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.72"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toEndOf="@+id/portonCuatroTablerosButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.269"
+        app:layout_constraintVertical_bias="0.259"
         app:srcCompat="@drawable/puerta_uno" />
 
 </android.support.constraint.ConstraintLayout>
