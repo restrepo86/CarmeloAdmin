@@ -3,30 +3,28 @@
     package="co.com.uco.carmeloadmin">
 
     <application
+        android:name=".util.GlobalState"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DespieceActivity" />
+        <activity android:name=".view.RegistroUsuarioActivity" />
+        <activity android:name=".view.InicioActivity" />
+        <activity android:name=".view.DespieceActivity" />
+        <activity android:name=".view.NuevaPuertaActivity" />
         <activity
-            android:name=".InicioActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_inicio"
-            android:theme="@style/FullscreenTheme" />
-        <activity android:name=".DetallePortonCuatroTablerosActivity" />
-        <activity android:name=".MasOpcionesDisenosActivity" />
-        <activity android:name=".DetallePortonDosTablerosActivity" />
-        <activity android:name=".DetallePortonSeisTablerosActivity" />
-        <activity android:name=".DetallePortonTresTablerosActivity"></activity>
+            android:name=".view.PresentacionActivity"
+            android:label="@string/title_activity_presentacion"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

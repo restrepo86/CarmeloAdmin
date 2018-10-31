@@ -1,7 +1,9 @@
-package co.com.uco.carmeloadmin;
+package co.com.uco.carmeloadmin.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import co.com.uco.carmeloadmin.R;
 
 public class DespieceActivity extends AppCompatActivity {
 
