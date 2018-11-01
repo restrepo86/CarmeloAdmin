@@ -1,5 +1,6 @@
 package co.com.uco.carmeloadmin.view;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -54,6 +55,8 @@ public class NuevaPuertaActivity extends AppCompatActivity {
             puertaDAO.insertar(puerta);
             Toast.makeText(this, "El registro de la puerta fue satisfactorio", Toast.LENGTH_SHORT).show();
             borrarCampos();
+            Intent intent = new Intent(NuevaPuertaActivity.this, PresentacionActivity.class);
+            startActivity(intent);
         }
 
     }
