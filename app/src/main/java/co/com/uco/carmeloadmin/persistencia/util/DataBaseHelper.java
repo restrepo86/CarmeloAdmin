@@ -11,7 +11,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private String createTablePieza = "CREATE TABLE PIEZA(id INTEGER PRIMARY KEY, ancho FLOAT, alto FLOAT, material TEXT)";
     private String createTableImagenPuerta = "CREATE TABLE IMAGEN(id INTEGER PRIMARY KEY, nombreImage TEXT, imagen BLOB)";
 
-    private String createTablePuerta = "CREATE TABLE PUERTA(id INTEGER PRIMARY KEY, nombre_puerta TEXT)";
+    private String createTablePuerta = "CREATE TABLE PUERTA(id INTEGER PRIMARY KEY, nombre_puerta TEXT, imagenPuerta BLOB)";
     private String createTablePiezasPuerta = "CREATE TABLE PIEZASPUERTA(id INTEGER PRIMARY KEY, idPuerta INTEGER, idPieza INTEGER, cantidad INTEGER, " +
                                              "FOREIGN KEY (idPuerta) REFERENCES PUERTA(id), FOREIGN KEY (idPieza) REFERENCES PIEZA(id))";
 
