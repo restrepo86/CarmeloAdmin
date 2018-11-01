@@ -5,15 +5,14 @@ public class ItemLista {
     private int idImage;
     private String id;
     private String ancho;
-    private String alto;
-    private String material;
 
-    public ItemLista(int idImage, String id, String ancho, String alto, String material) {
+
+    public ItemLista(int idImage, String id, String ancho) {
+
         this.idImage = idImage;
         this.id = id;
         this.ancho = ancho;
-        this.alto = alto;
-        this.material = material;
+
     }
 
     public int getIdImage() {
@@ -40,19 +39,4 @@ public class ItemLista {
         this.ancho = ancho;
     }
 
-    public String getAlto() {
-        return alto;
-    }
-
-    public void setAlto(String alto) {
-        this.alto = alto;
-    }
-
-    public String getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(String material) {
-        this.material = material;
-    }
 }

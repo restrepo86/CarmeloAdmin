@@ -27,9 +27,7 @@ public class CustomAdapter extends BaseAdapter {
     class ViewHolder{
         ImageView imageView;
         TextView txtId;
-        TextView txtAncho;
-        TextView txtAlto;
-        TextView txtMaterial;
+        TextView txtNombrePuerta;
     }
 
     @Override
@@ -56,9 +54,7 @@ public class CustomAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.item_lista, null);
             holder.imageView = convertView.findViewById(R.id.imageView);
             holder.txtId = convertView.findViewById(R.id.txtId);
-            holder.txtAncho = convertView.findViewById(R.id.txtAncho);
-            holder.txtAlto = convertView.findViewById(R.id.txtAlto);
-            holder.txtMaterial = convertView.findViewById(R.id.txtMaterial);
+            holder.txtNombrePuerta = convertView.findViewById(R.id.txtAncho);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -66,9 +62,7 @@ public class CustomAdapter extends BaseAdapter {
 
         holder.imageView.setImageResource(listaItems.get(position).getIdImage());
         holder.txtId.setText(listaItems.get(position).getId());
-        holder.txtAncho.setText(listaItems.get(position).getAncho());
-        holder.txtAlto.setText(listaItems.get(position).getAlto());
-        holder.txtMaterial.setText(listaItems.get(position).getMaterial());
+        holder.txtNombrePuerta.setText(listaItems.get(position).getAncho());
         return convertView;
     }
 

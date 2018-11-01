@@ -88,8 +88,7 @@ public class PresentacionActivity extends AppCompatActivity
         List<Puerta> listaDePuertas = puertaDAO.listar();
         for (Puerta puerta : listaDePuertas) {
             listaPuertas.add(new ItemLista(R.drawable.ic_launcher_background,
-                    puerta.getId().toString(), puerta.getAncho().toString(),
-                    puerta.getAlto().toString(), puerta.getMaterial()));
+                    puerta.getId().toString(), puerta.getNombrePuerta()));
         }
 
         customAdapter = new CustomAdapter(this, listaPuertas);

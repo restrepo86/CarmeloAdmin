@@ -8,7 +8,7 @@
     <string name="cantidad">Cantidad</string>
     <string name="grueso">Grueso</string>
     <string name="alto">Alto</string>
-    <string name="ancho">Ancho</string>
+    <string name="nombrePuerta">Ancho</string>
     <string name="generar_despiece">Generar Despiece</string>
     <string name="bienvenida_app">Bienvenido A CarmeloAdmin</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
