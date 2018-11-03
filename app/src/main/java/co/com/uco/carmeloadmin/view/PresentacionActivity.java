@@ -35,7 +35,6 @@ public class PresentacionActivity extends AppCompatActivity
 
     private GlobalState globalState;
     private ViewUtil viewUtil;
-    private EditText txtBuscar;
     private PuertaDAO puertaDAO;
     private Puerta puerta;
 
@@ -80,7 +79,6 @@ public class PresentacionActivity extends AppCompatActivity
         viewUtil = new ViewUtil(this);
         viewUtil.setToolBar("Carmelo Admin");
         listViewListaPuertas = findViewById(R.id.listView);
-        txtBuscar = findViewById(R.id.txtBuscar);
     }
 
     private void cargarLista() {

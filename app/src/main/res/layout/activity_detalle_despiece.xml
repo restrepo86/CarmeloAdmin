@@ -15,6 +15,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="GENERAR DESPIECE"
+        android:onClick="onClickGenerarDespiece"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -84,7 +85,7 @@
         app:layout_constraintVertical_bias="0.45" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/txtCantidad"
         android:layout_width="wrap_content"
         android:layout_height="49dp"
         android:layout_marginStart="8dp"
@@ -101,7 +102,7 @@
         app:layout_constraintVertical_bias="0.83" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/txtAlto"
         android:layout_width="wrap_content"
         android:layout_height="51dp"
         android:layout_marginStart="8dp"
@@ -110,7 +111,7 @@
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintBottom_toTopOf="@+id/txtCantidad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toEndOf="@+id/textView3"
@@ -118,7 +119,7 @@
         app:layout_constraintVertical_bias="0.795" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/txtAncho"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
@@ -127,7 +128,7 @@
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintBottom_toTopOf="@+id/txtAlto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.918"
         app:layout_constraintStart_toEndOf="@+id/textView2"

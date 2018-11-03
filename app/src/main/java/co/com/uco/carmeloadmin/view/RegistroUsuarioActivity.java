@@ -61,21 +61,31 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
     public Boolean validate(){
         boolean esValido = true;
         if(usuario.getId()==0){
+            esValido= false;
             txtId.setError(getString(R.string.id_requerido));
-            esValido= false;
             }else if("".equals(usuario.getNombreUsuario())){
+            esValido= false;
             txtNombreUsuario.setError(getString(R.string.nombre_usuario_requerido));
-            esValido= false;
         }else if("".equals(usuario.getContrasenia())){
+            esValido= false;
             txtContrasenia.setError(getString(R.string.contrasenia_requerida));
-            esValido= false;
         }else if(usuarioDAO.consultarPorId(usuario.getId())!= null){
-            txtId.setError(getString(R.string.existe_usuario_con_id));
             esValido= false;
+            txtId.setError(getString(R.string.existe_usuario_con_id));
         }
         else if(usuarioDAO.consultarPorNombreUsuario(usuario.getNombreUsuario())!= null){
-           txtNombreUsuario.setError(getString(R.string.existe_nombre_usuario));
             esValido= false;
+            txtNombreUsuario.setError(getString(R.string.existe_nombre_usuario));
+        } if (usuario.getContrasenia().length()< 8) {
+            esValido = false;
+            Toast.makeText(this, "La contraseña debe tener al menos 8 caracteres", Toast.LENGTH_SHORT).show();
+        }
+        try {
+            Long.parseLong(usuario.getContrasenia());
+            esValido = false;
+            Toast.makeText(this, "La contraseña debe tener caracteres", Toast.LENGTH_SHORT).show();
+        } catch (Exception ex) {
+            esValido = true;
         }
         return esValido;
     }

@@ -119,6 +119,7 @@ public class NuevaPuertaActivity extends AppCompatActivity {
 
     public void onClickCrearNuevaPuerta(View view) {
 
+        validarCampos();
         Integer id = "".equals(txtId.getText().toString())?0: Integer.parseInt(txtId.getText().toString());
         Puerta puerta = new Puerta();
         puerta.setId(id); //Consultar UUID para generar autoincremento del id
@@ -131,6 +132,13 @@ public class NuevaPuertaActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
+    }
+
+    private void validarCampos() {
+
+        if (txtId.getText() == null || txtNombrePuerta == null) {
+            Toast.makeText(this, "Debe diligenciar todos los campos", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void borrarCampos(){
