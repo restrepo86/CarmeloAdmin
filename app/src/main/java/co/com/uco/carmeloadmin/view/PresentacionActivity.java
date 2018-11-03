@@ -87,7 +87,7 @@ public class PresentacionActivity extends AppCompatActivity
         List<ItemLista> listaPuertas = new ArrayList<>();
         List<Puerta> listaDePuertas = puertaDAO.listar();
         for (Puerta puerta : listaDePuertas) {
-            listaPuertas.add(new ItemLista(R.drawable.ic_launcher_background,
+            listaPuertas.add(new ItemLista(R.drawable.puerta_tres,
                     puerta.getId().toString(), puerta.getNombrePuerta()));
         }
 
@@ -97,7 +97,8 @@ public class PresentacionActivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ItemLista itemLista = (ItemLista) listViewListaPuertas.getItemAtPosition(position);
-                Toast.makeText(getApplicationContext(), itemLista.getIdImage(), Toast.LENGTH_SHORT).show();
+                Intent intentDetalleDespiece = new Intent(PresentacionActivity.this, DetalleDespieceActivity.class);
+                startActivity(intentDetalleDespiece);
             }
         });
     }
