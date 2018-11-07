@@ -39,7 +39,7 @@
     <string name="usuario_registrado">El usuario se registró exitosamente</string>
     <string name="id_requerido">El numero de Identificacion es un campo requerido</string>
     <string name="nombre_usuario_requerido">El nombre de usuario es un campo requerido</string>
-    <string name="contrasenia_requerida">Una nueva contraseña es requerida</string>
+    <string name="contrasenia_requerida">La contraseña es un campo requerido</string>
     <string name="existe_usuario">El Usuario ya existe en el sistema</string>
     <string name="buscar">Buscar</string>
     <string name="existe_usuario_con_id">El usuario con la idenficación ingresada ya existe, asegúrece de registrarse con una identificación diferente</string>
