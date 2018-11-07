@@ -47,4 +47,6 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="lista_de_puertas_vacia">No existen puertas registradas actualmente</string>
     <string name="title_activity_presentacion">PresentacionActivity</string>
+    <string name="tamanio_constrasenia">La contraseña debe tener al menos 8 caracteres</string>
+    <string name="caracteres_contrasenia">La contraseña debe tener por lo menos una letra</string>
 </resources>

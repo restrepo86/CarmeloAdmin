@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import co.com.uco.carmeloadmin.R;
 import co.com.uco.carmeloadmin.domain.Usuario;
+import co.com.uco.carmeloadmin.exception.RegistroUsuarioException;
 import co.com.uco.carmeloadmin.persistencia.dao.UsuarioDAO;
 import co.com.uco.carmeloadmin.util.GlobalState;
 import co.com.uco.carmeloadmin.util.ViewUtil;
@@ -19,7 +20,6 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
     private EditText txtId;
     private EditText txtNombreUsuario;
     private EditText txtContrasenia;
-    private Usuario usuario;
     private ViewUtil viewUtil;
 
     @Override
@@ -41,58 +41,112 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
         txtId = findViewById(R.id.txtId);
         txtNombreUsuario = findViewById(R.id.txtNombreUsuario);
         txtContrasenia = findViewById(R.id.txtContrasenia);
-        usuario = new Usuario();
         viewUtil = new ViewUtil(this);
         viewUtil.setToolBar("Registrar");
+
     }
 
     public void onClickRegistrarse(View view) {
-        Integer id = "".equals(txtId.getText().toString())?0: Integer.parseInt(txtId.getText().toString());
+
+        Integer id = "".equals(txtId.getText().toString()) ? 0 : Integer.parseInt(txtId.getText().toString());
+        Usuario usuario = new Usuario();
         usuario.setId(id);
         usuario.setNombreUsuario(txtNombreUsuario.getText().toString());
         usuario.setContrasenia(txtContrasenia.getText().toString());
-        if(validate()){
+
+        if(validate(usuario)){
+
             usuarioDAO.insertar(usuario);
             Toast.makeText(this, R.string.usuario_registrado, Toast.LENGTH_SHORT).show();
             borrarCampos();
+
         }
+
     }
 
-    public Boolean validate(){
+    private Boolean validate(Usuario usuario){
+
         boolean esValido = true;
-        if(usuario.getId()==0){
+
+        if (camposRequeridosEstanLlenos(usuario)) {
+
+            try {
+
+                validarExisteIdentificacion(usuario.getId());
+                validarExisteNombreDeUsuario(usuario.getNombreUsuario());
+                validarContraseniaTieneTamanioValido(usuario.getContrasenia());
+                validarContraseniaContengaCaracteres(usuario.getContrasenia());
+
+            } catch (RegistroUsuarioException e) {
+                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+        } else {
+            return false;
+        }
+
+        return esValido;
+    }
+
+    public boolean camposRequeridosEstanLlenos(Usuario usuario) {
+
+        boolean esValido = true;
+
+        if(usuario.getId() == 0){
             esValido= false;
             txtId.setError(getString(R.string.id_requerido));
-            }else if("".equals(usuario.getNombreUsuario())){
+        }else if("".equals(usuario.getNombreUsuario())){
             esValido= false;
             txtNombreUsuario.setError(getString(R.string.nombre_usuario_requerido));
         }else if("".equals(usuario.getContrasenia())){
             esValido= false;
             txtContrasenia.setError(getString(R.string.contrasenia_requerida));
-        }else if(usuarioDAO.consultarPorId(usuario.getId())!= null){
-            esValido= false;
-            txtId.setError(getString(R.string.existe_usuario_con_id));
         }
-        else if(usuarioDAO.consultarPorNombreUsuario(usuario.getNombreUsuario())!= null){
-            esValido= false;
-            txtNombreUsuario.setError(getString(R.string.existe_nombre_usuario));
-        } if (usuario.getContrasenia().length()< 8) {
-            esValido = false;
-            Toast.makeText(this, "La contraseña debe tener al menos 8 caracteres", Toast.LENGTH_SHORT).show();
-        }
-        try {
-            Long.parseLong(usuario.getContrasenia());
-            esValido = false;
-            Toast.makeText(this, "La contraseña debe tener caracteres", Toast.LENGTH_SHORT).show();
-        } catch (Exception ex) {
-            esValido = true;
-        }
+
         return esValido;
+
+    }
+
+    public void validarExisteIdentificacion(Integer numeroIdentificacion) throws RegistroUsuarioException {
+
+        boolean existeNumeroDeIdentificacion = usuarioDAO.consultarPorId(numeroIdentificacion) != null;
+        if(existeNumeroDeIdentificacion){
+            throw new RegistroUsuarioException(getString(R.string.existe_usuario_con_id));
+        }
+
+    }
+
+    public void validarExisteNombreDeUsuario(String nombreUsuario) throws RegistroUsuarioException {
+
+        boolean existeNombreDeUsuario = usuarioDAO.consultarPorNombreUsuario(nombreUsuario) != null;
+        if(existeNombreDeUsuario) {
+            throw new RegistroUsuarioException(getString(R.string.existe_nombre_usuario));
+        }
+
+    }
+
+    public void validarContraseniaTieneTamanioValido(String contrasenia) throws RegistroUsuarioException {
+
+        if (contrasenia.length() < 8) {
+            throw new RegistroUsuarioException(getString(R.string.tamanio_constrasenia));
+        }
+
+    }
+
+    private void validarContraseniaContengaCaracteres(String contrasenia) throws RegistroUsuarioException {
+
+        if (contrasenia.matches("(?=.*[az])")) {
+            throw new RegistroUsuarioException(getString(R.string.caracteres_contrasenia));
+        }
+
     }
 
     private void borrarCampos(){
+
         txtId.setText("");
         txtNombreUsuario.setText("");
         txtContrasenia.setText("");
+
     }
 }
