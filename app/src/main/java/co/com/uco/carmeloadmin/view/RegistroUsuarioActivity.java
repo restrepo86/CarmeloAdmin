@@ -75,10 +75,9 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
                 validarExisteIdentificacion(usuario.getId());
                 validarExisteNombreDeUsuario(usuario.getNombreUsuario());
                 validarContraseniaTieneTamanioValido(usuario.getContrasenia());
-                validarContraseniaContengaCaracteres(usuario.getContrasenia());
 
-            } catch (RegistroUsuarioException e) {
-                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            } catch (RegistroUsuarioException registroUsuarioException) {
+                Toast.makeText(this, registroUsuarioException.getMessage(), Toast.LENGTH_SHORT).show();
                 return false;
             }
 
@@ -134,13 +133,6 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
 
     }
 
-    private void validarContraseniaContengaCaracteres(String contrasenia) throws RegistroUsuarioException {
-
-        if (contrasenia.matches("(?=.*[az])")) {
-            throw new RegistroUsuarioException(getString(R.string.caracteres_contrasenia));
-        }
-
-    }
 
     private void borrarCampos(){
 
