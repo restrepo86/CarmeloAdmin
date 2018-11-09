@@ -121,7 +121,7 @@
     <EditText
         android:id="@+id/txtAncho"
         android:layout_width="wrap_content"
-        android:layout_height="45dp"
+        android:layout_height="52dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -130,7 +130,7 @@
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/txtAlto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:layout_constraintVertical_bias="1.0" />

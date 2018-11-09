@@ -49,7 +49,7 @@ public class PresentacionActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         globalState = (GlobalState) getApplication();
-        DataBaseHelper db= new DataBaseHelper(this,"local",null, 1);
+        DataBaseHelper db = new DataBaseHelper(this, "local", null, 1);
         globalState.setDataBaseHelper(db);
         initComponents();
 
@@ -57,8 +57,8 @@ public class PresentacionActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(PresentacionActivity.this, NuevaPuertaActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -120,13 +120,11 @@ public class PresentacionActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.configuraciones) {
             return true;
         }
 
@@ -138,29 +136,21 @@ public class PresentacionActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        Intent intent= null;
-        if (id == R.id.nav_camera) {
-            intent= new Intent(PresentacionActivity.this, NuevaPuertaActivity.class);
+        Intent intent = null;
+        if (id == R.id.agregar_parametro) {
+
+        } else if (id == R.id.agregar_puerta) {
+            intent = new Intent(PresentacionActivity.this, NuevaPuertaActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.agregar_pieza) {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.configuraciones) {
 
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public void onClickCrearNuevaPuerta(View view) {
-        Intent intent = new Intent(PresentacionActivity.this, NuevaPuertaActivity.class);
-        startActivity(intent);
     }
 }

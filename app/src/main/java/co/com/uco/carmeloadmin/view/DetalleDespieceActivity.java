@@ -11,11 +11,9 @@ import co.com.uco.carmeloadmin.R;
 
 public class DetalleDespieceActivity extends AppCompatActivity {
 
-
     private EditText txtAncho;
     private EditText txtAlto;
     private EditText txtCantidad;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

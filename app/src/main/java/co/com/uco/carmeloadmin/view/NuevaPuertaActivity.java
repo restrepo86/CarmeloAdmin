@@ -122,7 +122,7 @@ public class NuevaPuertaActivity extends AppCompatActivity {
         validarCampos();
         Integer id = "".equals(txtId.getText().toString())?0: Integer.parseInt(txtId.getText().toString());
         Puerta puerta = new Puerta();
-        puerta.setId(id); //Consultar UUID para generar autoincremento del id
+        puerta.setId(id);
         puerta.setNombrePuerta(txtNombrePuerta.getText().toString());
         if(validate(puerta.getId())){
             puertaDAO.insertar(puerta);
@@ -156,7 +156,6 @@ public class NuevaPuertaActivity extends AppCompatActivity {
         }
         return esValido;
     }
-
 
     public void onClickCargarImagen(View view) {
         cargarImagen();
