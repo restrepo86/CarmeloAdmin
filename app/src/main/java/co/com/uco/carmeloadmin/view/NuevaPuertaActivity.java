@@ -57,7 +57,7 @@ public class NuevaPuertaActivity extends AppCompatActivity {
         txtId = findViewById(R.id.txtId);
         txtNombrePuerta = findViewById(R.id.txtNombrePuerta);
         viewUtil = new ViewUtil(this);
-        viewUtil.setToolBar("Registrar Disenio");
+        viewUtil.setToolBar("Registrar Nuevo Diseño");
         imagenId = findViewById(R.id.imagenId);
         btnCargarImagen = findViewById(R.id.btnCargarImagen);
 

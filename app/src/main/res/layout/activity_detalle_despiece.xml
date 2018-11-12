@@ -8,20 +8,26 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="GENERAR DESPIECE"
+        android:background="@color/colorPrimary"
         android:onClick="onClickGenerarDespiece"
+        android:text="GENERAR DESPIECE"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.917" />
+        app:layout_constraintVertical_bias="0.917"
+        tools:text="@tools:sample/full_names" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -36,7 +42,7 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.358"
         app:srcCompat="@drawable/puerta_tres" />
 
     <TextView
@@ -50,7 +56,7 @@
         android:text="ANCHO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.464" />
@@ -64,7 +70,7 @@
         android:layout_marginEnd="8dp"
         android:text="ALTO"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -79,10 +85,10 @@
         android:text="CANTIDAD"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintVertical_bias="0.46" />
 
     <EditText
         android:id="@+id/txtCantidad"

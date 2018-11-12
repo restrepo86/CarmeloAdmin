@@ -5,9 +5,9 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/agregar_parametro"
+            android:id="@+id/gestion_parametros"
             android:icon="@drawable/ic_add"
-            android:title="Agregar Parametro" />
+            android:title="Gestion de Parametros" />
         <item
             android:id="@+id/agregar_puerta"
             android:icon="@drawable/ic_add2"
