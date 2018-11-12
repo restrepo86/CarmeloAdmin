@@ -49,4 +49,6 @@
     <string name="title_activity_presentacion">PresentacionActivity</string>
     <string name="tamanio_constrasenia">La contraseña debe tener al menos 8 caracteres</string>
     <string name="caracteres_contrasenia">La contraseña debe tener por lo menos una letra</string>
+    <string name="diligenciar_todos_campos">Se deben diligenciar todos los campos</string>
+    <string name="error_imagen_galeria">Error obteniendo imagen de la galería por -> </string>
 </resources>

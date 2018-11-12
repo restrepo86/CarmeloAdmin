@@ -47,9 +47,9 @@ public class DetalleDespieceActivity extends AppCompatActivity {
             int cantBarrotes = 3 * Integer.valueOf(txtCantidad.getText().toString());
             int cantDivisoresVerticales = 2 * Integer.valueOf(txtCantidad.getText().toString());
 
-            String medidaBastidores = cantBastidores + " bastidores de ".concat(txtAlto.getText().toString()).concat("cm ").concat(" x 12cm x 4cm");
-            String medidaBarrotes = cantBarrotes + " barrotes de ".concat(String.valueOf(Double.valueOf(txtAncho.getText().toString()) - 24)).concat("cm ").concat(" x 12cm x 4cm");
-            String medidaDivisoresVerticales = cantDivisoresVerticales + " divisores verticales de ".concat(String.valueOf(((Double.valueOf(txtAlto.getText().toString()) - 36)/2) + 8)).concat("cm");
+            String medidaBastidores = cantBastidores + " bastidores de ".concat(txtAlto.getText().toString()).concat(" x 12cm x 4cm");
+            String medidaBarrotes = cantBarrotes + " barrotes de ".concat(String.valueOf(Double.valueOf(txtAncho.getText().toString()) - 24)).concat(" x 12cm x 4cm");
+            String medidaDivisoresVerticales = cantDivisoresVerticales + " divisores verticales de ".concat(String.valueOf(((Double.valueOf(txtAlto.getText().toString()) - 36)/2) + 8)).concat("cm").concat(" x 12cm x 4cm");
 
             Intent intent = new Intent(DetalleDespieceActivity.this, DespieceActivity.class);
             intent.putExtra("MEDIDA_BASTIDORES", medidaBastidores);
@@ -86,7 +86,7 @@ public class DetalleDespieceActivity extends AppCompatActivity {
 
         if (txtCantidad.getText().toString().isEmpty() || txtAncho.getText().toString().isEmpty() || txtAlto.getText().toString().isEmpty()) {
             isValid = false;
-            Toast.makeText(this,"Se deben diligenciar todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,R.string.diligenciar_todos_campos, Toast.LENGTH_SHORT).show();
         }
         return  isValid;
     }

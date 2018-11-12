@@ -28,11 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        //Unica instancia de la base de datos
-        globalState = (GlobalState) getApplication();
-        //Los celulares samsung tienen el problema de que a veces no crea la base de datos
-        // En el DataBaseHelper se debe tener copiar y pegar el metodo onUpGrade a un nuevo metodo llamado onDowngrade tal cual iguales, despues,
-        //Entonces se debe poner en version: 2, despues ejecutar, luego cambiar otra vez a version: 1 y por ultimo ejecutar nuevamente
+        globalState= (GlobalState) getApplication();
         DataBaseHelper db = new DataBaseHelper(this,"local",null, 1);
         globalState.setDataBaseHelper(db);
         initComponents();

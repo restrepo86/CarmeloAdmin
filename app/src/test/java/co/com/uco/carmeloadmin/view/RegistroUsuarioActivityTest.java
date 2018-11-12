@@ -15,6 +15,7 @@ public class RegistroUsuarioActivityTest {
 
     public static final Integer NUMERO_IDENTIFICACION = 12343354;
     public static final String NOMBRE_USUARIO = "Juan";
+    public static final String CONTRASENIA = "12345678";
 
     @InjectMocks
     private RegistroUsuarioActivity registroUsuarioActivity;
@@ -41,7 +42,7 @@ public class RegistroUsuarioActivityTest {
     @Test
     public void debeValidarContraseniaTieneTamanioValido() throws RegistroUsuarioException {
 
-        registroUsuarioActivity.validarContraseniaTieneTamanioValido("12345678");
+        registroUsuarioActivity.validarContraseniaTieneTamanioValido(CONTRASENIA);
 
     }
 

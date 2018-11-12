@@ -3,6 +3,7 @@ package co.com.uco.carmeloadmin.view;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
@@ -16,7 +17,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.net.FileNameMap;
+
+import java.io.IOException;
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
@@ -137,7 +139,7 @@ public class NuevaPuertaActivity extends AppCompatActivity {
     private void validarCampos() {
 
         if (txtId.getText() == null || txtNombrePuerta == null) {
-            Toast.makeText(this, "Debe diligenciar todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.diligenciar_todos_campos), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -175,6 +177,15 @@ public class NuevaPuertaActivity extends AppCompatActivity {
         if (resultCode==RESULT_OK) {
             Uri path = data.getData();
             imagenId.setImageURI(path);
+
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), path);
+            } catch (IOException e) {
+                Toast.makeText(this, getString(R.string.error_imagen_galeria).concat(e.getMessage()), Toast.LENGTH_SHORT).show();
+            }
+
+
         }
+
     }
 }
