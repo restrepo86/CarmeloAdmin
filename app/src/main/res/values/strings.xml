@@ -51,4 +51,5 @@
     <string name="caracteres_contrasenia">La contraseña debe tener por lo menos una letra</string>
     <string name="diligenciar_todos_campos">Se deben diligenciar todos los campos</string>
     <string name="error_imagen_galeria">Error obteniendo imagen de la galería por -> </string>
+    <string name="id_menor_8_caracteres">El identificador único de puerta debe ser menor a 8 caracteres</string>
 </resources>

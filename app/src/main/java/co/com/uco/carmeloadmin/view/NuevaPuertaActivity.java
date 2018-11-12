@@ -121,26 +121,39 @@ public class NuevaPuertaActivity extends AppCompatActivity {
 
     public void onClickCrearNuevaPuerta(View view) {
 
-        validarCampos();
-        Integer id = "".equals(txtId.getText().toString())?0: Integer.parseInt(txtId.getText().toString());
-        Puerta puerta = new Puerta();
-        puerta.setId(id);
-        puerta.setNombrePuerta(txtNombrePuerta.getText().toString());
-        if(validate(puerta.getId())){
+        if(validarCampos()){
+
+            Puerta puerta = new Puerta();
+            puerta.setId(Integer.valueOf(txtId.getText().toString()));
+            puerta.setNombrePuerta(txtNombrePuerta.getText().toString());
             puertaDAO.insertar(puerta);
+
             Toast.makeText(this, "El registro de la puerta fue satisfactorio", Toast.LENGTH_SHORT).show();
+
             borrarCampos();
+
             Intent intent = new Intent(NuevaPuertaActivity.this, PresentacionActivity.class);
             startActivity(intent);
         }
 
     }
 
-    private void validarCampos() {
+    private boolean validarCampos() {
 
-        if (txtId.getText() == null || txtNombrePuerta == null) {
-            Toast.makeText(this, getString(R.string.diligenciar_todos_campos), Toast.LENGTH_SHORT).show();
+        boolean isValid = true;
+
+        if ("".equals(txtId.getText().toString())) {
+            isValid = false;
+            txtId.setError(getString(R.string.requerido));
+        } else if ("".equals(txtNombrePuerta.getText().toString())) {
+            isValid = false;
+            txtNombrePuerta.setError(getString(R.string.requerido));
+        } else if (txtId.getText().toString().length() > 8) {
+            isValid = false;
+            Toast.makeText(this, R.string.id_menor_8_caracteres, Toast.LENGTH_SHORT).show();
         }
+
+        return isValid;
     }
 
     private void borrarCampos(){
@@ -148,15 +161,6 @@ public class NuevaPuertaActivity extends AppCompatActivity {
         txtId.setText("");
         txtNombrePuerta.setText("");
 
-    }
-
-    private Boolean validate(Integer id) {
-        boolean esValido = true;
-        if (id == 0) {
-            txtId.setError(getString(R.string.requerido));
-            esValido = false;
-        }
-        return esValido;
     }
 
     public void onClickCargarImagen(View view) {
