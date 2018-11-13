@@ -29,14 +29,15 @@ public class PuertaDAO {
 
     public List<Puerta> listar(){
         List<Puerta> listaPuertas = new ArrayList<>();
-        query = "".concat("SELECT id, nombre_puerta FROM "+tableName);
-        Cursor cursor = db.rawQuery(query,null);
+        query = "".concat("SELECT id, nombre_puerta, imagenPuerta FROM "+tableName);
+        Cursor cursor = db.rawQuery(query, new String[] {});
         Puerta puerta = null;
         if(cursor.moveToFirst()){
             do {
                 puerta = new Puerta();
-                puerta.setId(cursor.getInt(cursor.getColumnIndex("id")));
-                puerta.setNombrePuerta(cursor.getString(cursor.getColumnIndex("nombre_puerta")));
+                puerta.setId(cursor.getInt(0));
+                puerta.setNombrePuerta(cursor.getString(1));
+                puerta.setImagenPuerta(cursor.getBlob(2));
                 listaPuertas.add(puerta);
             }while(cursor.moveToNext());
             cursor.close();

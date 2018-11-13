@@ -1,13 +1,15 @@
 package co.com.uco.carmeloadmin.util;
 
+import android.graphics.Bitmap;
+
 public class ItemLista {
 
-    private int idImage;
+    private Bitmap idImage;
     private String id;
     private String ancho;
 
 
-    public ItemLista(int idImage, String id, String ancho) {
+    public ItemLista(Bitmap idImage, String id, String ancho) {
 
         this.idImage = idImage;
         this.id = id;
@@ -15,11 +17,11 @@ public class ItemLista {
 
     }
 
-    public int getIdImage() {
+    public Bitmap getIdImage() {
         return idImage;
     }
 
-    public void setIdImage(int idImage) {
+    public void setIdImage(Bitmap idImage) {
         this.idImage = idImage;
     }
 

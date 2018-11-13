@@ -60,7 +60,7 @@ public class CustomAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.imageView.setImageResource(listaItems.get(position).getIdImage());
+        holder.imageView.setImageBitmap(listaItems.get(position).getIdImage());
         holder.txtId.setText(listaItems.get(position).getId());
         holder.txtNombrePuerta.setText(listaItems.get(position).getAncho());
         return convertView;

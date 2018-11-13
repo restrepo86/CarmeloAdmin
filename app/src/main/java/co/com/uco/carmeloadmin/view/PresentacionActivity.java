@@ -1,6 +1,8 @@
 package co.com.uco.carmeloadmin.view;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +20,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,7 +88,9 @@ public class PresentacionActivity extends AppCompatActivity
         List<ItemLista> listaPuertas = new ArrayList<>();
         List<Puerta> listaDePuertas = puertaDAO.listar();
         for (Puerta puerta : listaDePuertas) {
-            listaPuertas.add(new ItemLista(R.drawable.puerta_tres,
+            ByteArrayInputStream bais = new ByteArrayInputStream(puerta.getImagenPuerta());
+            Bitmap imagenBdBitmap = BitmapFactory.decodeStream(bais);
+            listaPuertas.add(new ItemLista(imagenBdBitmap,
                     puerta.getId().toString(), puerta.getNombrePuerta()));
         }
 
