@@ -123,12 +123,13 @@ public class NuevaPuertaActivity extends AppCompatActivity {
 
     public void onClickCrearNuevaPuerta(View view) {
 
+
+
         if(validarCampos()){
 
             ByteArrayOutputStream baos = new ByteArrayOutputStream(20480);
             bitmap.compress(Bitmap.CompressFormat.PNG, 0, baos);
             byte[] imagenPuertaBytes = baos.toByteArray();
-
             Puerta puerta = new Puerta();
             puerta.setId(Integer.valueOf(txtId.getText().toString()));
             puerta.setNombrePuerta(txtNombrePuerta.getText().toString());
@@ -155,6 +156,9 @@ public class NuevaPuertaActivity extends AppCompatActivity {
         } else if (txtId.getText().toString().length() > 8) {
             isValid = false;
             Toast.makeText(this, R.string.id_menor_8_caracteres, Toast.LENGTH_SHORT).show();
+        } else if (bitmap == null) {
+            isValid = false;
+            Toast.makeText(this, R.string.seleccione_imagen, Toast.LENGTH_SHORT).show();
         }
 
         return isValid;

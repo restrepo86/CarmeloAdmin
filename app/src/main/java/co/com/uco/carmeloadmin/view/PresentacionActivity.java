@@ -148,10 +148,7 @@ public class PresentacionActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         Intent intent = null;
-        if (id == R.id.gestion_parametros) {
-            intent = new Intent(PresentacionActivity.this, GestionParametrosActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.agregar_puerta) {
+        if (id == R.id.agregar_puerta) {
             intent = new Intent(PresentacionActivity.this, NuevaPuertaActivity.class);
             startActivity(intent);
 
