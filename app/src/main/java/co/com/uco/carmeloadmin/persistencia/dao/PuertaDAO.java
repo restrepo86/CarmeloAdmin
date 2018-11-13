@@ -23,6 +23,7 @@ public class PuertaDAO {
         ContentValues row = new ContentValues();
         row.put("id", puerta.getId());
         row.put("nombre_puerta", puerta.getNombrePuerta());
+        row.put("imagenPuerta", puerta.getImagenPuerta());
         db.insert(tableName, null, row);
     }
 

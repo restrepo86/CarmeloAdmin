@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
@@ -38,6 +39,7 @@ public class NuevaPuertaActivity extends AppCompatActivity {
     private ViewUtil viewUtil;
     private ImageView imagenId;
     private Button btnCargarImagen;
+    private Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,15 +125,17 @@ public class NuevaPuertaActivity extends AppCompatActivity {
 
         if(validarCampos()){
 
+            ByteArrayOutputStream baos = new ByteArrayOutputStream(20480);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 0, baos);
+            byte[] imagenPuertaBytes = baos.toByteArray();
+
             Puerta puerta = new Puerta();
             puerta.setId(Integer.valueOf(txtId.getText().toString()));
             puerta.setNombrePuerta(txtNombrePuerta.getText().toString());
+            puerta.setImagenPuerta(imagenPuertaBytes);
             puertaDAO.insertar(puerta);
-
             Toast.makeText(this, "El registro de la puerta fue satisfactorio", Toast.LENGTH_SHORT).show();
-
             borrarCampos();
-
             Intent intent = new Intent(NuevaPuertaActivity.this, PresentacionActivity.class);
             startActivity(intent);
         }
@@ -183,7 +187,7 @@ public class NuevaPuertaActivity extends AppCompatActivity {
             imagenId.setImageURI(path);
 
             try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), path);
+                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), path);
             } catch (IOException e) {
                 Toast.makeText(this, getString(R.string.error_imagen_galeria).concat(e.getMessage()), Toast.LENGTH_SHORT).show();
             }
