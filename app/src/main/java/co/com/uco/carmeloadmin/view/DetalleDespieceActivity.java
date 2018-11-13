@@ -83,15 +83,15 @@ public class DetalleDespieceActivity extends AppCompatActivity {
         txtCantidad.setError(null);
         if(Double.valueOf(txtAlto.getText().toString()) < 20){
             isValid = false;
-            txtAlto.setError("Recuerde que el mínimo valor para la fabricación de una puerta son 20cm de Alto");
+            txtAlto.setError(getString(R.string.minimo_alto));
         }
         if(Double.valueOf(txtAncho.getText().toString()) < 25){
             isValid = false;
-            txtAncho.setError("Recuerde que el mínimo valor para la fabricación de una puerta son 25cm de Ancho");
+            txtAncho.setError(getString(R.string.minimo_ancho));
         }
         if(Integer.valueOf(txtCantidad.getText().toString()) < 1){
             isValid = false;
-            txtCantidad.setError("Recuerde que el mínimo valor de cantidad de puertas es 1");
+            txtCantidad.setError(getString(R.string.minima_cantidad));
         }
 
         return  isValid;

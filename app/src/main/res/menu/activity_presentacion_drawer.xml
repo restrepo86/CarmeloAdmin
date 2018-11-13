@@ -7,18 +7,18 @@
         <item
             android:id="@+id/gestion_parametros"
             android:icon="@drawable/ic_add"
-            android:title="Gestion de Parametros" />
+            android:title="@string/gestion_de_parametros" />
         <item
             android:id="@+id/agregar_puerta"
             android:icon="@drawable/ic_add2"
-            android:title="Agregar Puerta" />
+            android:title="@string/agregar_puerta" />
         <item
             android:id="@+id/agregar_pieza"
             android:icon="@drawable/ic_add"
-            android:title="Piezas en el Stock" />
+            android:title="@string/piezas_en_el_stock" />
         <item
             android:id="@+id/configuraciones"
             android:icon="@drawable/ic_conf"
-            android:title="Configuraciones" />
+            android:title="@string/configuraciones" />
     </group>
 </menu>

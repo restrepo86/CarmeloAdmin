@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         globalState= (GlobalState) getApplication();
-        DataBaseHelper db = new DataBaseHelper(this,"local",null, 1);
+        DataBaseHelper db = new DataBaseHelper(this,getString(R.string.local),null, 1);
         globalState.setDataBaseHelper(db);
         initComponents();
     }

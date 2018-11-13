@@ -42,7 +42,7 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
         txtNombreUsuario = findViewById(R.id.txtNombreUsuario);
         txtContrasenia = findViewById(R.id.txtContrasenia);
         viewUtil = new ViewUtil(this);
-        viewUtil.setToolBar("Registrar");
+        viewUtil.setToolBar(getString(R.string.registrar));
 
     }
 

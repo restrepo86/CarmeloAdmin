@@ -53,7 +53,7 @@ public class PresentacionActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         globalState = (GlobalState) getApplication();
-        DataBaseHelper db = new DataBaseHelper(this, "local", null, 1);
+        DataBaseHelper db = new DataBaseHelper(this, getString(R.string.local), null, 1);
         globalState.setDataBaseHelper(db);
         initComponents();
 
@@ -81,7 +81,7 @@ public class PresentacionActivity extends AppCompatActivity
         puertaDAO = new PuertaDAO(globalState.getDataBaseHelper().getWritableDatabase());
         puerta = new Puerta();
         viewUtil = new ViewUtil(this);
-        viewUtil.setToolBar("Carmelo Admin");
+        viewUtil.setToolBar(getString(R.string.carmelo_admin));
         listViewListaPuertas = findViewById(R.id.listView);
     }
 

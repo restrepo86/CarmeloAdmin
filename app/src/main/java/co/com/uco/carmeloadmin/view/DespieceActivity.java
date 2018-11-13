@@ -24,7 +24,7 @@ public class DespieceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_despiece);
         viewUtil = new ViewUtil(this);
-        viewUtil.setToolBar("Generación del Despiece");
+        viewUtil.setToolBar(getString(R.string.generacion_despiece));
 
         Bundle bundle = getIntent().getExtras();
 

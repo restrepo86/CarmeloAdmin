@@ -61,7 +61,7 @@ public class NuevaPuertaActivity extends AppCompatActivity {
         txtId = findViewById(R.id.txtId);
         txtNombrePuerta = findViewById(R.id.txtNombrePuerta);
         viewUtil = new ViewUtil(this);
-        viewUtil.setToolBar("Registrar Nuevo Diseño");
+        viewUtil.setToolBar(getString(R.string.registrar_nuevo_diseño));
         imagenId = findViewById(R.id.imagenId);
         btnCargarImagen = findViewById(R.id.btnCargarImagen);
 
@@ -107,8 +107,8 @@ public class NuevaPuertaActivity extends AppCompatActivity {
 
     private void cargarDialogoRecomendacion() {
         AlertDialog.Builder dialogo = new AlertDialog.Builder(NuevaPuertaActivity.this);
-        dialogo.setTitle("Permisos Desactivados");
-        dialogo.setMessage("Debe aceptar los permisos para el correcto funcionamiento de la App");
+        dialogo.setTitle(R.string.permisos_off);
+        dialogo.setMessage(R.string.aceptar_permisos);
 
         dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
@@ -135,7 +135,7 @@ public class NuevaPuertaActivity extends AppCompatActivity {
             puerta.setNombrePuerta(txtNombrePuerta.getText().toString());
             puerta.setImagenPuerta(imagenPuertaBytes);
             puertaDAO.insertar(puerta);
-            Toast.makeText(this, "El registro de la puerta fue satisfactorio", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.registro_ok, Toast.LENGTH_SHORT).show();
             borrarCampos();
             Intent intent = new Intent(NuevaPuertaActivity.this, PresentacionActivity.class);
             startActivity(intent);
@@ -179,7 +179,7 @@ public class NuevaPuertaActivity extends AppCompatActivity {
 
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         intent.setType("image/");
-        startActivityForResult(intent.createChooser(intent, "Seleccione la Aplicacion"), 10);
+        startActivityForResult(intent.createChooser(intent, getString(R.string.seleccione_app)), 10);
 
     }
 
