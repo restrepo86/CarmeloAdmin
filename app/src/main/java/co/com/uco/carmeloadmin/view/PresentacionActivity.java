@@ -21,6 +21,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,6 +102,11 @@ public class PresentacionActivity extends AppCompatActivity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ItemLista itemLista = (ItemLista) listViewListaPuertas.getItemAtPosition(position);
                 Intent intentDetalleDespiece = new Intent(PresentacionActivity.this, DetalleDespieceActivity.class);
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                itemLista.getIdImage().compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] imagePuertaByteArray = stream.toByteArray();
+
+                intentDetalleDespiece.putExtra("IMAGEN_PUERTA", imagePuertaByteArray);
                 startActivity(intentDetalleDespiece);
             }
         });

@@ -1,11 +1,16 @@
 package co.com.uco.carmeloadmin.view;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.ByteArrayInputStream;
 
 import co.com.uco.carmeloadmin.R;
 import co.com.uco.carmeloadmin.util.ViewUtil;
@@ -16,6 +21,7 @@ public class DetalleDespieceActivity extends AppCompatActivity {
     private EditText txtAlto;
     private EditText txtCantidad;
     private ViewUtil viewUtil;
+    private ImageView puertaImgView;
 
 
     @Override
@@ -32,12 +38,22 @@ public class DetalleDespieceActivity extends AppCompatActivity {
     }
 
     private void initComponents() {
+
+
+        puertaImgView = findViewById(R.id.puertaImgView);
         viewUtil = new ViewUtil(this);
         viewUtil.setToolBar("Área de Despiece");
         txtAlto = findViewById(R.id.txtAlto);
         txtAncho = findViewById(R.id.txtAncho);
         txtCantidad = findViewById(R.id.txtCantidad);
 
+        Bundle bundle = getIntent().getExtras();
+
+        if (bundle != null) {
+            byte[] imagenPuertaByte = bundle.getByteArray("IMAGEN_PUERTA");
+            Bitmap imagenBdBitmap = BitmapFactory.decodeByteArray(imagenPuertaByte, 0, imagenPuertaByte.length);
+            puertaImgView.setImageBitmap(imagenBdBitmap);
+        }
     }
 
     public void onClickGenerarDespiece(View view) {
